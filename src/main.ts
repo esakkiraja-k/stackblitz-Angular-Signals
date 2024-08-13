@@ -29,6 +29,7 @@ export class App {
 
   exPrice = computed(() => this.selectedProduct().price * this.quantity());
   color = computed(() => this.exPrice() > 50 ? 'green': 'blue');
+  e = effect(() => console.log('In effect ex price',this.exPrice()));
   constructor() {
     console.log('Constructor', this.quantity());
     effect(() => console.log('In effect',this.quantity()));
